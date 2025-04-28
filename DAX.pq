@@ -1,4 +1,4 @@
-# Calendário com o dia da semana em português
+-- Calendário com o dia da semana em português
 
 dCalendario =
 ADDCOLUMNS(
@@ -13,7 +13,7 @@ ADDCOLUMNS(
     "Mês Ano", CONCATENATE(YEAR([Date]), CONCATENATE("-", FORMAT([Date], "MMM")))
 )
 
-# Medida com icones de status
+-- Medida com icones de status
 
 medidasStatusIcon =
 ADDCOLUMNS(
@@ -25,20 +25,7 @@ ADDCOLUMNS(
         [Date] = TODAY(), "⏳",
         [Date] > TODAY(), "❌"
     )
-)
-
-medidasStatusIcon =
-VAR DATA_DURAÇÃO= MAX(fDados_Curva[Atributo]) - MIN(fDados_Curva[Atributo])
-RETURN IF(
-    DATA_DURAÇÃO < 30, "❌",
-    IF(
-        DATA_DURAÇÃO = 30, "✔️",
-        IF(
-            DATA_DURAÇÃO > 30, "⏳",
-            BLANK()
-        )
-    )
-)
+)    
 
 medidasStatusIcon =
 VAR DATA_DURAÇÃO= MAX(fDados_Curva[Atributo]) - MIN(fDados_Curva[Atributo])
@@ -55,3 +42,31 @@ RETURN IF(
 )    
 
 # symbl.cc tem mais opções para esolher setas
+
+
+Dias Uteis =
+NETWORDAYS(
+    SELECTEDVALUE(dCalendario[Date]), -- data inicial
+    SELECTEDVALUE(dCalendario[Date]), -- data final
+    1, -- 1 = domingo é o primeiro dia da semana
+    FERIADOS -- lista de feriados
+)
+--OBS: 1 = domingo é o primeiro dia da semana
+--OBS: 2 = segunda é o primeiro dia da semana
+--OBS: 11 = segunda é o primeiro dia da semana
+--OBS: 12 = terça é o primeiro dia da semana
+--OBS: 13 = quarta é o primeiro dia da semana
+--OBS: 14 = quinta é o primeiro dia da semana
+--OBS: 15 = sexta é o primeiro dia da semana
+--OBS: 16 = sábado é o primeiro dia da semana
+
+Função para tratar dados em branco
+TratarDadosEmBranco =
+    COALESCE(
+        [Vendedor], 
+        [Canal de Vendas]
+)
+
+-- OBS: COALESCE retorna o primeiro valor não nulo de uma lista de valores.
+-- OBS: COALESCE é útil para tratar dados em branco ou nulos em colunas ou medidas.
+
