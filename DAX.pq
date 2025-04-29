@@ -70,3 +70,32 @@ TratarDadosEmBranco =
 -- OBS: COALESCE retorna o primeiro valor não nulo de uma lista de valores.
 -- OBS: COALESCE é útil para tratar dados em branco ou nulos em colunas ou medidas.
 
+Raqueando5itens = 
+    RANKX(
+        ALL(fDados[Vendedor]), -- tabela a ser ranqueada 
+        [Vendas], --
+        5, -- 5 = número de itens a serem ranqueados
+        DESC, -- DESC = ordem decrescente
+        DENSE -- DENSE = ranqueia itens com o mesmo valor com o mesmo número
+    )
+
+-- OBS: RANKX é útil para ranquear itens em uma tabela ou medida.
+
+ConcatenarColunas =
+    CONCATENATEX(
+        VALUES(fDados[Vendedor]), -- tabela a ser concatenada
+        fDados[Vendedor], -- coluna a ser concatenada
+        ", " -- separador entre os itens concatenados
+    )
+-- OBS: CONCATENATEX é útil para concatenar itens em uma tabela ou medida.
+
+Acumulado Vendas = 
+    CALCULATE(
+        SUM(fDados[Vendas]), -- soma das vendas
+        DATESYTD(dCalendario[Date]), -- calcula o acumulado até a data atual
+        ALL(dCalendario[Date]) -- remove o filtro da tabela de calendário
+    )
+-- OBS: DATESYTD calcula o acumulado até a data atual.
+-- OBS: ALL remove o filtro da tabela de calendário para calcular o acumulado.
+
+
