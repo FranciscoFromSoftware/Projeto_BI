@@ -140,7 +140,18 @@
         "background": [
           {
             "show": true,
-            "transparency": 0
+            "transparency": 0,
+            "backgroundColor": {
+              "solid": {
+                "color": "#02101A"
+              }
+            },
+            "gradient": {
+              "startColor": "#02101A",
+              "endColor": "#042649",
+              "angle": 45
+            },
+            "borderRadius": 50
           }
         ],
         "border": [
@@ -152,16 +163,17 @@
           {
             "backgroundColor": {
               "solid": {
-                "color": "#ffffff"
+                "color": "#02101A"
               }
             },
             "transparency": 0,
             "border": true,
             "borderColor": {
               "solid": {
-                "color": "#B3B0AD"
+                "color": "#042649"
               }
-            }
+            },
+            "borderRadius": 50
           }
         ],
         "filterCard": [
