@@ -11,6 +11,9 @@ https://www.youtube.com/watch?v=XRxojcO7CU4&t=11s
 Gráfico de barras com bolhas
 https://www.youtube.com/watch?v=xos92WT4G-c
 
+Top 10 Power BI Features
+https://www.youtube.com/watch?v=IHos-NXgzd8
+
 
 ## Minhas Boas Práticas
 
@@ -29,3 +32,9 @@ https://www.youtube.com/watch?v=xos92WT4G-c
 7. Compartilhar a base de conhecimento utilizada para criação do projeto 📚
 
 8. Documentação do projeto 😭😒
+
+
+## Atalhos para agilizar os projetos
+
+1. Crtl + K C ou Crtl + ; transforma uma medida selecionada em comentário.
+2. Crtl + K U reverte a transformação.
