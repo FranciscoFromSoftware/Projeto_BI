@@ -38,3 +38,8 @@ https://www.youtube.com/watch?v=IHos-NXgzd8
 
 1. Crtl + K C ou Crtl + ; transforma uma medida selecionada em comentário.
 2. Crtl + K U reverte a transformação.
+
+# Dicas de Compartilhamento
+
+1. Adicionar ao link de compartilhamento &filterPaneEnabled=false&navContentPaneEnabled=false para desativar as barras laterais do relatório.
+2.
