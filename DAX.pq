@@ -98,4 +98,9 @@ Acumulado Vendas =
 -- OBS: DATESYTD calcula o acumulado até a data atual.
 -- OBS: ALL remove o filtro da tabela de calendário para calcular o acumulado.
 
+-- Adcionar video no visual importado HTML content
+HTML = "<video width='1280' height='700' autoplay muted loop controls>
+   <source src='" & [URL_Video] & "' type='video/mp4'>
+   Seu navegador não suporta a tag de vídeo.
+</video>"
 
